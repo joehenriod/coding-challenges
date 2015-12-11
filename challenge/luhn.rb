@@ -34,15 +34,17 @@ module Luhn
 
     #Step 3 - If the doubled value is greater than or equal to 10, take the value and subtract 9 from it.
 
+    final_array = []
+
     reversed_transformed.each do |digit|
       if digit >= 10
-        digit - 9
+        final_array << digit - 9
       else
-        digit
+        final_array << digit
       end
     end
 
-    #puts reversed_transformed.inspect <-- Not working
+    puts final_array # Not working
 
      
     #Step 4 - Sum the digits.
@@ -54,6 +56,12 @@ module Luhn
 
 
     #Step 5 - If the sum is divisible by 10 it's a valid number. Otherwise it's invalid
+
+    if sum % 10 == 0
+      true
+    else
+      false
+    end
 
   end
 

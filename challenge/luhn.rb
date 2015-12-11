@@ -29,10 +29,30 @@ module Luhn
       end
     end
 
-     puts reversed_transformed.inspect
+      
+
 
     #Step 3 - If the doubled value is greater than or equal to 10, take the value and subtract 9 from it.
+
+    reversed_transformed.each do |digit|
+      if digit >= 10
+        digit - 9
+      else
+        digit
+      end
+    end
+
+    #puts reversed_transformed.inspect <-- Not working
+
+     
     #Step 4 - Sum the digits.
+
+    sum = 0
+    reversed_transformed.each { |a| sum+=a }
+
+    puts sum
+
+
     #Step 5 - If the sum is divisible by 10 it's a valid number. Otherwise it's invalid
 
   end

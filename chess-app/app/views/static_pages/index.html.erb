@@ -43,7 +43,7 @@ Play with anyone on the planet!
 
 <% if user_signed_in? %>
 <div class="text-center">
-  <%= link_to 'New Game', '#', class: 'btn btn-primary text-center' %>
+  <%= link_to 'New Game', new_game_path, class: 'btn btn-primary text-center' %>
 </div>
 <% else %>
 <div class="booyah-box text-center col-xs-10 col-xs-offset-1">

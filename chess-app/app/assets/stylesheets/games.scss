@@ -1,3 +1,106 @@
 // Place all the styles related to the games controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+* {
+  box-sizing: border-box;
+}
+
+.module-game {
+  .board {
+    border-collapse: separate;
+    border: 10px solid #000;
+    position: relative;
+    min-height: 320px;
+    min-width: 320px;
+    max-width: 600px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .rank:nth-child(odd) .file:nth-child(even),
+  .rank:nth-child(even) .file:nth-child(odd) {
+    background-color: #ccc;
+  }
+
+  .file {
+    border: 1px solid #000;
+    padding: 0;
+    position: relative;
+    width: 12.5%;
+
+    &:after {
+      content:'';
+      display:block;
+      padding-bottom:100%;
+    }
+  }
+
+  .chessman {
+    background-image: url("game-sprite.svg");
+    background-size: 600%;
+    cursor: pointer;
+    height: 100%;
+    position: absolute;
+    transition: .25s;
+    width: 100%;
+    z-index: 50;
+
+    &.is-dragging {
+      transition: none;
+      z-index: 100;
+    }
+
+    &.white {
+      &.king {
+        background-position: 0 0;
+      }
+
+      &.queen  {
+        background-position: 20% 0;
+      }
+
+      &.bishop  {
+        background-position: 40% 0;
+      }
+
+      &.rook  {
+        background-position: 80% 0;
+      }
+
+      &.knight  {
+       background-position: 60% 0;
+      }
+
+      &.pawn  {
+        background-position: 100% 0;
+      }
+    }
+
+    &.black {
+      &.king  {
+        background-position: 0 100%;
+      }
+
+      &.queen  {
+        background-position: 20% 100%;
+      }
+
+      &.bishop  {
+        background-position: 40% 100%;
+      }
+
+      &.knight  {
+        background-position: 60% 100%;
+      }
+
+      &.rook  {
+        background-position: 80% 100%;
+      }
+
+      &.pawn  {
+        background-position: 100% 100%;
+      }
+    }
+  }
+}

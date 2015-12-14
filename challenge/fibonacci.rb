@@ -8,6 +8,15 @@ require 'minitest/autorun'
 module Fibonacci
   def iterative_fib(number)
     first_array = [0,1]
+    new_number = 0
+
+    new_number = first_array.last + first_array.last.previous
+
+    puts new_number
+
+
+
+
 
   end
 

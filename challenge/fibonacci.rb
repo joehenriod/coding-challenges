@@ -1,51 +1,63 @@
-fib(0) = 0 
-fib(1) = 1 
-fib(n) = fib(n-1) + fib(n-2)
-
-require 'minitest/autorun'
-
-
-module Fibonacci
-  def iterative_fib(number)
-    first_array = [0,1]
-    new_number = 0
-
-    new_number = first_array.last + first_array.last.previous
-
-    puts new_number
-
-
-
-
-
-  end
-
-  def recursive_fib(number)
-    first_array = [0,1]
-
-  end
-
+public
+def recursive_fib(n)  
+  #base case
+    fibzero = 1
+    if n == 0
+      fibn = fibzero
+      return fibn
+    end 
+    if n == 1
+      fibn = recursive_fib(0)
+      return fibn 
+    end   
+    if n == 2
+      fibn = recursive_fib(1) + (n-1) # = 2
+      return fibn
+    end 
+    if n == 3
+      fibn = recursive_fib(2) + (n-2) # = 3
+      return fibn
+    else
+      fibn = recursive_fib(n-1) + recursive_fib(n-2)
+      return fibn
+    end 
+    
 end
 
-
-
-class TestFibonacci < MiniTest::Unit::TestCase
-
-  def TestFib
-    assert Fibonacci.iterative_fib(9) == 34
+def iterative_fib(n)
+  fib   = []
+  fibzero = 1
+  fib1  = 1
+  fib << fibzero
+  fib << fib1
+  #fibnext = @fib[0] + @fib[1]
+  #fib << fibnext
+  fib.each_index do |i|
+    if i == 0
+      fibnext = fib[0]
+    end
+    if i != 0 and i < n 
+      fibnext = fib[i-1] + fib[i]
+      fib << fibnext
+    end
   end
-
-  def TestFib
-    assert ! Fibonacci.iterative_fib(6) == 5
-  end
-
-  def TestFib2
-    assert Fibonacci.recursive_fib(8) == 21
-
-  def TestFib2
-    assert ! Fibonacci.recursive_fib(1) == 0
-  end
-
+  #puts "The #{n}th Fibonacci number is #{fib.last}"
+end 
   
+puts iterative_fib(9)
+ 
+# initializing variable "fibnth"
+#fibnth = 0
+# puts "Which nth number in the Fibonacci sequence would you like the value for?"
+# n = $stdin.gets.chomp.to_i
+# fibnth.recursive_fib(n)
+# puts "The #{n}th Fibonacci number is #{fibnth.recursive_fib(n)}."
+# fibnth.iterative_fib(n)
 
-end
+require 'benchmark'
+  num = 35
+  Benchmark.bm do |x|
+    x.report("recursive_fib") { recursive_fib(num) }
+    x.report("iterative_fib")  { iterative_fib(num)  }
+  end
+    

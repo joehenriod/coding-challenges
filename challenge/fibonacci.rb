@@ -7,12 +7,12 @@ require 'minitest/autorun'
 
 module Fibonacci
   def iterative_fib(number)
-
-  
+    first_array = [0,1]
 
   end
 
   def recursive_fib(number)
+    first_array = [0,1]
 
   end
 

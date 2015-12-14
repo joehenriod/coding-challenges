@@ -6,9 +6,13 @@ require 'minitest/autorun'
 
 
 module Fibonacci
-  def fib(number)
+  def iterative_fib(number)
 
   
+
+  end
+
+  def recursive_fib(number)
 
   end
 
@@ -18,19 +22,19 @@ end
 
 class TestFibonacci < MiniTest::Unit::TestCase
 
-  def test_luhn_valid
-    assert Fibonacci.fib(9) == 34
+  def TestFib
+    assert Fibonacci.iterative_fib(9) == 34
   end
 
-  def test_luhn_invalid
-    assert ! Fibonacci.fib(6) == 5
+  def TestFib
+    assert ! Fibonacci.iterative_fib(6) == 5
   end
 
-  def test_luhn_valid2
-    assert Fibonacci.fib(8) == 21
+  def TestFib2
+    assert Fibonacci.recursive_fib(8) == 21
 
-  def test_luhn_invalid2
-    assert ! Fibonacci.fib(1) == 0
+  def TestFib2
+    assert ! Fibonacci.recursive_fib(1) == 0
   end
 
   

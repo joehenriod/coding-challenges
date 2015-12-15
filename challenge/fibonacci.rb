@@ -1,4 +1,4 @@
-def fib(n)
+def recursive_fib(n)
 
   @a = 0
   @b = 1
@@ -16,4 +16,14 @@ def fib(n)
 
 end
 
-fib(10)
+#recursive_fib(10)
+
+
+def interative_fib(n)
+  starting_array = [0,1]
+
+  puts starting_array
+
+end
+
+interative_fib(1)

@@ -23,8 +23,8 @@ def interative_fib(n)
   starting_array = [0,1]
 
   first_operation = starting_array.reverse
-
-  puts first_operation
+  second_operation = first_operation[0] + first_operation[1]
+  puts second_operation
 
 end
 

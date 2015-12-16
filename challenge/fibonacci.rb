@@ -22,7 +22,9 @@ end
 def interative_fib(n)
   starting_array = [0,1]
 
-  puts starting_array
+  first_operation = starting_array.reverse
+
+  puts first_operation
 
 end
 

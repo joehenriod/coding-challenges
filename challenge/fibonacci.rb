@@ -3,7 +3,7 @@ def recursive_fib(n)
   @a = 0
   @b = 1
 
-  (1).upto(n) do
+  (1).upto(n-1) do
 
   sum = @a + @b
   @a = @b
@@ -16,22 +16,28 @@ def recursive_fib(n)
 
 end
 
-#recursive_fib(10)
+recursive_fib(10)
 
 
 def iterative_fib(n)
   
-  n.times do 
-    fib_array = [0,1]
+  fib_array = [0,1]
 
-    first_operation = fib_array.reverse
-    second_operation = first_operation[0] + first_operation[1]
-    fib_array << second_operation.to_i
+  (n-2).times do 
+    
+
+    first_operation = fib_array
+    second_operation = first_operation[-1] + first_operation[-2]
+    fib_array << second_operation
+
+    
 
 
-    puts fib_array
+      
   end
+
+  return fib_array.last
 
 end
 
-iterative_fib(3)
+puts iterative_fib(10)

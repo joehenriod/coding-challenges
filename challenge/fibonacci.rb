@@ -8,7 +8,7 @@ def recursive_fib(n)
   sum = @a + @b
   @a = @b
   @b = sum
-  puts @a
+  return @a
     
   end
 
@@ -16,7 +16,7 @@ def recursive_fib(n)
 
 end
 
-recursive_fib(10)
+#recursive_fib(10)
 
 
 def iterative_fib(n)
@@ -40,4 +40,11 @@ def iterative_fib(n)
 
 end
 
-puts iterative_fib(10)
+puts iterative_fib(35)
+
+require 'benchmark'
+n = 350
+Benchmark.bm do |x|
+  x.report("recursive_fib") { recursive_fib(n) }
+  x.report("iterative_fib")  { iterative_fib(n)  }
+end

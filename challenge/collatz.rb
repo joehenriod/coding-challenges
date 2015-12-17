@@ -9,9 +9,14 @@ coll_arr = []
 
   if n == 1
     coll_arr << n 
+  elsif n.even?
+    coll_arr << (n/2)
+  elsif n.odd?
+    coll_arr << ((n * 3) + 1)
   end
+    
 
 end
 
 
-puts collatz(1)
+puts collatz(5)

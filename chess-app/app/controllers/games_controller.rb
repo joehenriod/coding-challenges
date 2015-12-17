@@ -19,8 +19,11 @@ class GamesController < ApplicationController
 
   def update
     g = Game.find(params[:id])
-    g.move_piece(params[:game][:origin], params[:game][:destination], params[:id])
-    render text: 'success'
+    if g.move_piece(params[:game][:origin], params[:game][:destination], params[:id])
+      render json: {}, status: :ok
+    else
+      render json: { error: "Houston, we have a problem" }, status: :unprocessable_entity
+    end
   end
 
   private

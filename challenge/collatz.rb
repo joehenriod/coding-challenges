@@ -14,7 +14,8 @@ coll_arr = []
   elsif n.odd?
     coll_arr << ((n * 3) + 1)
   end
-    
+  
+  coll_arr[-1] = n
 
 end
 

@@ -7,17 +7,24 @@ def collatz(n)
 
 coll_arr = []
 
-  if n == 1
-    coll_arr << n 
-  elsif n.even?
-    coll_arr << (n/2)
-  elsif n.odd?
-    coll_arr << ((n * 3) + 1)
+  while coll_arr.last != 1
+    if n.even?
+      coll_arr << (n/2)
+    elsif n.odd?
+      coll_arr << ((n * 3) + 1)
+    end
+    n = coll_arr.last
   end
   
-  coll_arr[-1] = n
+  coll_arr.length
 
 end
 
+num = [1,2,3,4]
 
-puts collatz(5)
+def counter
+  num.each do |x|
+  collatz(n)
+end
+
+puts counter

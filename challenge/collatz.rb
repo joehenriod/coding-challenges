@@ -20,11 +20,14 @@ coll_arr = []
 
 end
 
-num = [1,2,3,4]
+
 
 def counter
-  num.each do |x|
+  num = (1..100).to_a
+
+  num.each do |n|
   collatz(n)
+  end
 end
 
 puts counter

@@ -26,8 +26,10 @@ def counter
   num = (1..100).to_a
 
   num.each do |n|
-  collatz(n)
+
   end
 end
 
-puts counter
+n = (1..100).to_a
+
+puts collatz(n)

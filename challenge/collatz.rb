@@ -1,11 +1,7 @@
 # n → n/2 (n is even)
 # n → 3n + 1 (n is odd)
 
-
-
-
-
-
+#Why can't I figure out how to get a method inside another method?
 def counter
 
   def collatz(n)

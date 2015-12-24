@@ -19,10 +19,10 @@ end
 
 
 def counter
-  num = (1..1000000).to_a
+  num = (1..100).to_a
   calculated_values = []
 
-  num.each do |n|
+  num.each_with_index do |n, index|
    calculated_values << collatz(n)
   end
 

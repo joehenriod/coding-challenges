@@ -23,10 +23,13 @@ def counter
   calculated_values = {}
 
   num.each_with_index { |n, index| calculated_values << collatz(n) }
-  end
-
+ 
 return calculated_values.max
+
 end
+
+
+
 
 
 puts counter

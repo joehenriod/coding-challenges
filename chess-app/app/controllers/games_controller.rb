@@ -9,7 +9,7 @@ class GamesController < ApplicationController
   end
 
   def create
-    @game = Game.create_game(game_params)
+    @game = Game.create_game(game_params.merge(white_player: current_user))
     redirect_to edit_game_path(@game)
   end
 
@@ -18,8 +18,9 @@ class GamesController < ApplicationController
   end
 
   def update
-    g = Game.find(params[:id])
-    if g.move_piece(params[:game][:origin], params[:game][:destination], params[:id])
+    game = Game.find(params[:id])
+
+    if game.move_piece(params[:game][:piece_id], params[:game][:destination].map(&:to_i))
       render json: {}, status: :ok
     else
       render json: { error: "Houston, we have a problem" }, status: :unprocessable_entity
@@ -29,6 +30,6 @@ class GamesController < ApplicationController
   private
 
   def game_params
-    params.require(:game).permit(:users)
+    params.require(:game).permit(:black_player_id)
   end
 end

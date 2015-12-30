@@ -1,7 +1,5 @@
-#FizzBuzz Interview Question
-
 def fizzbuzz
-  1.upto(100) do |x|
+  (-50).upto(100) do |x|
       if x % 3 == 0 && x % 5 == 0
         puts "FizzBuzz"
       elsif x % 3 == 0

@@ -1,0 +1,6 @@
+#FizzBuzz Interview Question
+
+(1..100).to_a do |x|
+puts x
+end
+

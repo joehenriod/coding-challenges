@@ -7,6 +7,31 @@
 }
 
 .module-game {
+  .promotion {
+    background-color: #fff;
+    border-radius: 5px;
+    border: 2px solid #000;
+    display: none;
+    padding: 5px;
+    position: absolute;
+    transform: translateY(-100%);
+    z-index: 100;
+
+    &.is-active {
+      display: block;
+    }
+
+    .wrapper {
+      height: 50px;
+      width: 200px;
+    }
+
+    .col {
+      height: 100%;
+      width: 25%;
+    }
+  }
+
   .board {
     border-collapse: separate;
     border: 10px solid #000;
@@ -16,23 +41,27 @@
     max-width: 600px;
     margin: 0 auto;
     width: 100%;
-  }
 
-  .rank:nth-child(odd) .file:nth-child(even),
-  .rank:nth-child(even) .file:nth-child(odd) {
-    background-color: #ccc;
-  }
+    .rank:nth-child(odd) .file:nth-child(even),
+    .rank:nth-child(even) .file:nth-child(odd) {
+      background-color: #ccc;
+    }
 
-  .file {
-    border: 1px solid #000;
-    padding: 0;
-    position: relative;
-    width: 12.5%;
+    .file {
+      border: 1px solid #000;
+      padding: 0;
+      position: relative;
+      width: 12.5%;
 
-    &:after {
-      content:'';
-      display:block;
-      padding-bottom:100%;
+      &:after {
+        content:'';
+        display:block;
+        padding-bottom:100%;
+      }
+    }
+
+    .chessman {
+      position: absolute;
     }
   }
 
@@ -41,7 +70,6 @@
     background-size: 600%;
     cursor: pointer;
     height: 100%;
-    position: absolute;
     transition: .25s;
     width: 100%;
     z-index: 50;
@@ -52,53 +80,53 @@
     }
 
     &.white {
-      &.king {
+      &[data-piece-type="King"] {
         background-position: 0 0;
       }
 
-      &.queen  {
+      &[data-piece-type="Queen"] {
         background-position: 20% 0;
       }
 
-      &.bishop  {
+      &[data-piece-type="Bishop"] {
         background-position: 40% 0;
       }
 
-      &.rook  {
-        background-position: 80% 0;
-      }
-
-      &.knight  {
+      &[data-piece-type="Knight"] {
        background-position: 60% 0;
       }
 
-      &.pawn  {
+      &[data-piece-type="Rook"] {
+        background-position: 80% 0;
+      }
+
+      &[data-piece-type="Pawn"] {
         background-position: 100% 0;
       }
     }
 
     &.black {
-      &.king  {
+      &[data-piece-type="King"] {
         background-position: 0 100%;
       }
 
-      &.queen  {
+      &[data-piece-type="Queen"] {
         background-position: 20% 100%;
       }
 
-      &.bishop  {
+      &[data-piece-type="Bishop"] {
         background-position: 40% 100%;
       }
 
-      &.knight  {
+      &[data-piece-type="Knight"] {
         background-position: 60% 100%;
       }
 
-      &.rook  {
+      &[data-piece-type="Rook"] {
         background-position: 80% 100%;
       }
 
-      &.pawn  {
+     &[data-piece-type="Pawn"] {
         background-position: 100% 100%;
       }
     }

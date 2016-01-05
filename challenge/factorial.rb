@@ -16,3 +16,13 @@ end
 
 
 puts factor(5)
+
+
+
+def factor_simple(x)
+
+  (1..x).inject(:*)
+
+end
+
+puts factor_simple(4)

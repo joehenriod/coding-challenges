@@ -18,3 +18,14 @@ end
 puts rot13_2("joe")
 
 puts rot13_2("wbr")
+
+def rot13_3(n)
+  arry = ["n-za-m"]
+
+  arry.each_with_index {|n, index|
+    next_element = arry[index + 1]
+    return next_element
+  }
+end
+
+puts rot13_3("a")

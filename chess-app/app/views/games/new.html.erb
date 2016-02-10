@@ -1,0 +1,9 @@
+<div class="booyah-box col-xs-10 col-xs-offset-1">
+  <h1>Start a New Game</h1>
+  <%= simple_form_for @game do |f| %>
+	<%= f.input :black_player_id, collection: @users, label_method: :email %>
+	  <br />
+  	<br />
+    <%= f.submit 'Let\'s Play', :class => 'btn btn-primary' %>
+  <% end %>
+</div>

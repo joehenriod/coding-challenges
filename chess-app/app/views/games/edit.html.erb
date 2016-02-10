@@ -1,0 +1,27 @@
+<section class="module-game" data-update-url="<%= game_path(@game) %>">
+  <table class="board">
+    <% 8.times do |i| %>
+      <tr class="rank">
+        <% 8.times do |j| %>
+          <td class="file">
+            <% piece = @game.pieces.find_by(y_position: i, x_position: j, status: 0) %>
+            <% if piece %>
+              <div class="chessman <%= piece.is_white ? 'white' : 'black' %>" data-piece-type="<%= piece.type %>" data-piece-id=<%= piece.id %> data-update-url="<%= piece_path(piece) %>"></div>
+            <% end %>
+          </td>
+        <% end %>
+      </tr>
+    <% end %>
+  </table>
+
+  <div class="promotion">
+    <table class="wrapper">
+      <tr class="row">
+        <td class="col"><div class="white chessman" data-piece-type="Queen"></div></td>
+        <td class="col"><div class="white chessman" data-piece-type="Knight"></div></td>
+        <td class="col"><div class="white chessman" data-piece-type="Rook"></div></td>
+        <td class="col"><div class="white chessman" data-piece-type="Bishop"></div></td>
+      </tr>
+    </table>
+  </div>
+</section>

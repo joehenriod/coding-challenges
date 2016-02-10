@@ -31,7 +31,7 @@ class Tree
     puts @payload
     return self if @payload == 11
     @children.each do |child|
-        var1 = child.dfs_11
+        var1 = child.dfs_11_3
         if var1 == nil 
         else
           return var1
@@ -43,6 +43,23 @@ class Tree
 
   end
 
+
+
+def dfs_11_3
+    puts @payload
+    return self if @payload == 11
+    @children.each do |child|
+        var1 = child.dfs_11
+        if var1 == nil 
+        else
+          return var1
+        end
+      
+    end
+
+    return nil
+
+  end
 
 end
 

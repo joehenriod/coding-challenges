@@ -1,0 +1,1 @@
+#Given two different strings of text, find the longest common subsequence to it. So for example ABCDAF and ACBCF have "ABCDAF" and "ACBCF", so the answer is ABCF
